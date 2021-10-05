@@ -6,35 +6,42 @@
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
-		"plugin:react-hooks/recommended",
+        "plugin:react-hooks/recommended",
         "plugin:import/recommended",
-		"plugin:prettier/recommended",
-		"prettier"
+        "plugin:prettier/recommended",
+        "prettier"
     ],
     "settings": {
-      "react": {
-        "version": "detect"
-      }
-    },
-    "parser":  "babel-eslint",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
+        "react": {
+            "version": "detect"
         },
-        "ecmaVersion": 12,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react",
-        "react-hooks",
-		"prettier"
-    ],
-    "rules": {
-        "no-console": "warn",
-        "import/first": "error",
-        "react/prop-types": 0,
-		"prettier/prettier": "error",
-		"arrow-body-style": "off",
-		"prefer-arrow-callback": "off"
+        "import/resolver": {
+            "node": {
+                "paths": [
+                    "src"
+                ]
+            }
+        },
+        "parser": "babel-eslint",
+        "parserOptions": {
+            "ecmaFeatures": {
+                "jsx": true
+            },
+            "ecmaVersion": 12,
+            "sourceType": "module"
+        },
+        "plugins": [
+            "react",
+            "react-hooks",
+            "prettier"
+        ],
+        "rules": {
+            "no-console": "warn",
+            "import/first": "error",
+            "prettier/prettier": "error",
+            "arrow-body-style": "off",
+            "prefer-arrow-callback": "off",
+            "react/prop-types": [0, {"skipUndeclared": true}]
+        }
     }
 }
